@@ -9,4 +9,6 @@ export class BasicosComponent{
   public lowerCase : string = "gabriel";
   public upperCase : string = "GABRIEL";
   public caseTitle : string = "gAbRiEL";
+
+  public fecha : Date = new Date();
 }
