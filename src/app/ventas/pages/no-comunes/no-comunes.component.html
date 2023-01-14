@@ -18,7 +18,18 @@
                 <p><button pButton type="button" [disabled]="!(clientes.length > 0)" class="p-button-rounded p-button-secondary" label="Eliminar cliente" (click)="borrarCliente()"></button></p>
         </p-fieldset>
     </div>
-
+    <div class="col-6">
+        <p-fieldset legend="JSON pipe"  [toggleable]="true">
+            <pre>{{ jsonValue | json }}</pre>
+        </p-fieldset>
+    </div>
+    <div class="col-6">
+        <p-fieldset legend="KeyValue pipe"  [toggleable]="true">
+            <ul>
+                <li *ngFor="let item of persona | keyvalue"><b>{{item.key | titlecase}}:</b> {{item.value}}</li>
+            </ul>
+        </p-fieldset>
+    </div>
     <div class="col-6">
         <p-fieldset legend="Slice pipe"  [toggleable]="true">
             <b>Original</b>
@@ -33,12 +44,5 @@
             <pre>{{ clientes | slice:0:3 }}</pre>
         </p-fieldset>
     </div>
-
-    <div class="col-6">
-        <p-fieldset legend="KeyValue pipe"  [toggleable]="true">
-            <ul>
-                <li *ngFor="let item of persona | keyvalue"><b>{{item.key | titlecase}}:</b> {{item.value}}</li>
-            </ul>
-        </p-fieldset>
-    </div>
+    
 </div>
