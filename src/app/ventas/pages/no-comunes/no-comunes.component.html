@@ -4,7 +4,7 @@
 </div>
 
 <div class="grid">
-    <div class="col">
+    <div class="col-6">
         <p-fieldset legend="i18nSelect Pipe"  [toggleable]="true">
             <p>Saludos {{nombre}}, es un placer {{ genero | i18nSelect: invitacionMapping}} nuevamente por aqui.</p>
             <p>
@@ -12,11 +12,25 @@
             </p>
         </p-fieldset>
     </div>
-    <div class="col">
+    <div class="col-6">
         <p-fieldset legend="i18nSelect Plural"  [toggleable]="true">
                 <p>Actualmente {{ clientes.length | i18nPlural: clientesMapping}}.</p>
                 <p><button pButton type="button" [disabled]="!(clientes.length > 0)" class="p-button-rounded p-button-secondary" label="Eliminar cliente" (click)="borrarCliente()"></button></p>
         </p-fieldset>
     </div>
 
+    <div class="col-6">
+        <p-fieldset legend="Slice pipe"  [toggleable]="true">
+            <b>Original</b>
+            <pre>{{ clientes }}</pre>
+            <b>Slice: 0</b>
+            <pre>{{ clientes | slice:0}}</pre>
+            <b>Slice: 0:1</b>
+            <pre>{{ clientes | slice:0:1 }}</pre>
+            <b>Slice: 0:2</b>
+            <pre>{{ clientes | slice:0:2 }}</pre>
+            <b>Slice: 0:3</b>
+            <pre>{{ clientes | slice:0:3 }}</pre>
+        </p-fieldset>
+    </div>
 </div>

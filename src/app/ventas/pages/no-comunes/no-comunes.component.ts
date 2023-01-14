@@ -28,7 +28,7 @@ export class NoComunesComponent{
   }
 
    //i18Plural
-   public clientes : string[] = ["Gabriel", "Maria","Sofia", "Jose"];
+   public clientes : string[] = ["Gabriel", "Sofia", "Jose","Maria"];
    public clientesMapping={
     '=0': 'no existen clientes esperando.',
     '=1': 'existe 1 cliente esperando.',
