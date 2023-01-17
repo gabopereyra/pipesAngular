@@ -1,5 +1,5 @@
-import { ThisReceiver } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-no-comunes',
@@ -52,4 +52,13 @@ export class NoComunesComponent {
     { heroe: 'Spiderman', habilidad: 'Sentido aracnido' },
     { heroe: 'Flash', habilidad: 'Super velocidad' },
   ];
+
+  //Async pipe
+  miObservable = interval(1000);
+
+  miPromesa = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Promesa resuelta.");
+    }, 3500);
+  })
 }
